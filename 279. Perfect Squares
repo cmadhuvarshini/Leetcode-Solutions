@@ -1,0 +1,11 @@
+class Solution(object):
+    def numSquares(self, n):
+        sq = {i * i for i in range(1, int(n**0.5) + 1)}
+        if n in sq:
+            return 1   
+        if any((n - x) in sq for x in sq):
+            return 2 
+        for x in sq:
+            if any((n - x - y) in sq for y in sq):
+                return 3   
+        return 4
