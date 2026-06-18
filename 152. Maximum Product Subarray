@@ -1,0 +1,10 @@
+class Solution(object):
+    def maxProduct(self, nums):
+        ans = hi = lo = nums[0]
+        for i in range(1, len(nums)):
+            x = nums[i]
+            t = hi 
+            hi = max(x, x * t, x * lo)
+            lo = min(x, x * t, x * lo)
+            ans = max(ans, hi) 
+        return ans
