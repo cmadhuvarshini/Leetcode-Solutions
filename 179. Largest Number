@@ -1,0 +1,8 @@
+class Solution(object):
+    def largestNumber(self, nums):
+        strs = [str(x) for x in nums]
+        strs.sort(key=lambda x: x * 10, reverse=True)
+        ans = "".join(strs)
+        if ans[0] == "0":
+            return "0"   
+        return ans
